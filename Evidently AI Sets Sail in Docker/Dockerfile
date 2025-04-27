@@ -5,8 +5,9 @@ FROM python:3.10
 WORKDIR /app
 
 # Copy the requirements file and install dependencies
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir --break-system-packages -r requirements.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
 
 # Copy the entire project into the container
 COPY . /app/
